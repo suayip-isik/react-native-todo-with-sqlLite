@@ -1,0 +1,48 @@
+{
+  "name": "toDoAppWithSqlLite",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "android:clean": "cd android && ./gradlew clean",
+    "android:remove": "cd android && ./gradlew uninstallAll",
+    "android:bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android:debug:apk": "cd android && ./gradlew assembleDebug",
+    "android:release:apk": "cd android && ./gradlew assembleRelease",
+    "android:debug:test": "cd android && ./gradlew installDebug",
+    "ios": "react-native run-ios --simulator=\"iPhone 14 Pro Max\"",
+    "ios:clean": "cd ios && xcodebuild clean",
+    "clean": "react-native-clean-project --keep-node-modules true --remove-iOS-build true --remove-iOS-pods false --keep-system-iOS-pods-cache true --keep-user-iOS-pods-cache true --remove-android-build true --clean-android-project true --keep-brew true --keep-pods true",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "start": "react-native start",
+    "generate:api": "openapi-generator-cli generate -g typescript-axios -i https://jsonplaceholder.typicode.com/posts -o ./src/api --skip-validate-spec --global-property skipFormModel=false,withInterfaces=true",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@types/react-native-sqlite-storage": "^6.0.0",
+    "react": "18.2.0",
+    "react-native": "0.72.3",
+    "react-native-sqlite-storage": "^6.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@babel/runtime": "^7.20.0",
+    "@react-native/eslint-config": "^0.72.2",
+    "@react-native/metro-config": "^0.72.9",
+    "@tsconfig/react-native": "^3.0.0",
+    "@types/react": "^18.0.24",
+    "@types/react-test-renderer": "^18.0.0",
+    "babel-jest": "^29.2.1",
+    "eslint": "^8.19.0",
+    "jest": "^29.2.1",
+    "metro-react-native-babel-preset": "0.76.7",
+    "prettier": "^2.4.1",
+    "react-test-renderer": "18.2.0",
+    "typescript": "4.8.4"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
